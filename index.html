@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Estratégico: Maximización de Valor para Accionistas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden; /* Prevent scrolling the body */
+        }
+        .slide {
+            height: 100vh;
+            width: 100%;
+            display: none; /* Hide all slides by default */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 4rem;
+            position: absolute; /* Position slides on top of each other */
+            top: 0;
+            left: 0;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+        .active-slide {
+            display: flex; /* Show the active slide */
+            opacity: 1;
+            z-index: 1;
+        }
+        .slide-header {
+            position: absolute;
+            top: 2rem;
+            left: 4rem;
+            right: 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .slide-footer {
+            position: absolute;
+            bottom: 2rem;
+            left: 4rem;
+            right: 4rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        .action-title {
+            font-size: 2.25rem; /* 36px */
+            font-weight: 700;
+            color: #1e3a8a; /* A deep blue */
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            font-size: 1.25rem; /* 20px */
+            color: #4b5563;
+            margin-bottom: 2.5rem;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+            border: 1px solid #e5e7eb;
+        }
+        .kpi {
+            text-align: center;
+        }
+        .kpi-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #1e3a8a;
+        }
+        .kpi-label {
+            font-size: 1rem;
+            color: #4b5563;
+            margin-top: 0.25rem;
+        }
+        .bar-chart {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            height: 350px;
+            border-left: 2px solid #d1d5db;
+            border-bottom: 2px solid #d1d5db;
+            padding-left: 1rem;
+            position: relative;
+        }
+        .bar {
+            width: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            position: relative;
+            height: 100%;
+        }
+        .bar-fill {
+            width: 100%;
+            transition: height 1.5s ease-out;
+            border-radius: 0.25rem 0.25rem 0 0;
+        }
+        .bar-label {
+            position: absolute;
+            bottom: -2.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+            text-align: center;
+            width: 100px;
+        }
+        .bar-top-value {
+            position: absolute;
+            top: -1.75rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 1rem;
+            }
+            .slide-header, .slide-footer {
+                left: 1rem;
+                right: 1rem;
+            }
+            .action-title {
+                font-size: 1.75rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+            }
+            .grid-cols-3 {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+            .bar-chart {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Slide Container -->
+    <div id="slide-container">
+        <!-- Slide 1: Título -->
+        <section class="slide bg-white">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-black text-gray-800 tracking-tight">Análisis Estratégico</h1>
+                <p class="mt-4 text-xl md:text-2xl text-blue-800 font-semibold">Maximizando el Valor para los Accionistas</p>
+                <p class="mt-8 text-lg text-gray-600">Propuesta para la distribución de $850.000.000</p>
+                <p class="mt-2 text-sm text-gray-500">Sociedad San Miguel S.A. | Julio, 2025</p>
+            </div>
+            <div class="slide-footer">
+                <span>Confidencial</span>
+                <span>Diapositiva 1 de 7</span>
+            </div>
+        </section>
+
+        <!-- Slide 2: Resumen Ejecutivo y Recomendación -->
+        <section class="slide bg-gray-50">
+            <div class="slide-header">
+                <span class="font-bold text-blue-900">Resumen Ejecutivo</span>
+            </div>
+            <div class="w-full max-w-6xl">
+                <h2 class="action-title">La Readquisición de Acciones maximiza el valor neto para el accionista en ~$200M vs. dividendos.</h2>
+                <p class="subtitle">Análisis comparativo de tres alternativas de distribución de $850M.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card border-t-4 border-red-500">
+                        <h3 class="font-bold text-lg text-gray-800">1. Distribución de Dividendos</h3>
+                        <p class="text-sm text-gray-500 mt-1">Tradicional pero fiscalmente ineficiente.</p>
+                        <div class="mt-4 kpi"><p class="kpi-value text-red-600">~$598M</p><p class="kpi-label">Valor Neto para Accionistas</p></div>
+                        <div class="mt-2 kpi"><p class="text-2xl font-bold text-red-600">29.6%</p><p class="kpi-label">Tasa Efectiva de Impuesto</p></div>
+                    </div>
+                    <div class="card border-t-4 border-green-500 transform scale-105">
+                        <div class="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">RECOMENDADO</div>
+                        <h3 class="font-bold text-lg text-gray-800">3. Readquisición de Acciones</h3>
+                        <p class="text-sm text-gray-500 mt-1">Estructura fiscalmente óptima y estratégica.</p>
+                        <div class="mt-4 kpi"><p class="kpi-value text-green-600">~$797M</p><p class="kpi-label">Valor Neto para Accionistas</p></div>
+                         <div class="mt-2 kpi"><p class="text-2xl font-bold text-green-600">6.2%</p><p class="kpi-label">Tasa Efectiva de Impuesto</p></div>
+                    </div>
+                    <div class="card border-t-4 border-yellow-500">
+                        <h3 class="font-bold text-lg text-gray-800">2. Reducción de Capital</h3>
+                        <p class="text-sm text-gray-500 mt-1">Alto riesgo fiscal y barreras procesales.</p>
+                        <div class="mt-4 kpi"><p class="kpi-value text-yellow-600">$850M</p><p class="kpi-label">Valor Neto (Teórico, alto riesgo)</p></div>
+                        <div class="mt-2 kpi"><p class="text-2xl font-bold text-yellow-600">0%</p><p class="kpi-label">Tasa Impuesto (Riesgo re-caracterización)</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Confidencial</span>
+                <span>Diapositiva 2 de 7</span>
+            </div>
+        </section>
+
+        <!-- Slide 3: Alternativa 1 - Dividendos -->
+        <section class="slide bg-white">
+            <div class="slide-header"><span class="font-bold text-blue-900">Alternativa 1</span></div>
+            <div class="w-full max-w-6xl">
+                <h2 class="action-title">Distribución de Dividendos: Un costo fiscal de $251.7M reduce significativamente el valor para el accionista.</h2>
+                <p class="subtitle">Análisis de la alternativa más tradicional y su impacto tributario.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="card bg-gray-50">
+                        <h3 class="font-bold text-lg text-gray-800 mb-3">Paso a Paso</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                            <li>Propuesta de la Junta Directiva a la Asamblea.</li>
+                            <li>Aprobación en Asamblea General de Accionistas.</li>
+                            <li>Cumplimiento de la reserva legal (requisito pendiente).</li>
+                            <li>Sociedad practica retención en la fuente sobre el pago.</li>
+                            <li>Pago neto a los accionistas en los plazos definidos.</li>
+                        </ol>
+                    </div>
+                    <div class="card">
+                        <h3 class="font-bold text-lg text-gray-800 mb-3">Cuantificación de Efectos</h3>
+                        <div class="space-y-4">
+                            <div><div class="flex justify-between text-sm font-medium text-gray-600"><span>Distribución Bruta</span><span>$850.000.000</span></div><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-600 h-2.5 rounded-full" style="width: 100%"></div></div></div>
+                            <div><div class="flex justify-between text-sm font-medium text-red-600"><span>Impuesto Definitivo (Accionista)</span><span>($251.712.874)</span></div><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-red-500 h-2.5 rounded-full" style="width: 29.6%"></div></div></div>
+                            <div><div class="flex justify-between text-sm font-bold text-green-700"><span>Valor Neto para Accionistas</span><span>$598.287.126</span></div><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-green-600 h-2.5 rounded-full" style="width: 70.4%"></div></div></div>
+                        </div>
+                        <div class="mt-6 p-3 bg-red-50 border border-red-200 rounded-lg text-center"><p class="font-bold text-red-800">Tasa Efectiva de Impuesto: 29.61%</p><p class="text-sm text-red-700">La alternativa más costosa desde el punto de vista fiscal.</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>Confidencial</span><span>Diapositiva 3 de 7</span></div>
+        </section>
+
+        <!-- Slide 4: Alternativa 2 - Reducción de Capital -->
+        <section class="slide bg-gray-50">
+            <div class="slide-header"><span class="font-bold text-blue-900">Alternativa 2</span></div>
+            <div class="w-full max-w-6xl">
+                <h2 class="action-title">Reducción de Capital: Teóricamente sin impuestos, pero con riesgos procesales y fiscales prohibitivos.</h2>
+                <p class="subtitle">Una estructura de alto riesgo que no se recomienda en las circunstancias actuales.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="card">
+                        <h3 class="font-bold text-lg text-gray-800 mb-3">Obstáculos Críticos</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg><div><h4 class="font-semibold">Riesgo Fiscal Extremo</h4><p class="text-sm text-gray-600">Alta probabilidad de que la DIAN re-caracterice la operación como un dividendo 100% gravado, generando un impuesto aún mayor que en la Alternativa 1.</p></div></li>
+                             <li class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg><div><h4 class="font-semibold">Incumplimiento de Requisito Legal</h4><p class="text-sm text-gray-600">La sociedad no cumple la razón de solvencia (Activo > 2x Pasivo), lo que obliga a obtener el consentimiento escrito de <span class="font-bold">todos</span> los acreedores. Esto es operativamente inviable.</p></div></li>
+                        </ul>
+                    </div>
+                     <div class="card bg-yellow-50 border-yellow-200">
+                        <h3 class="font-bold text-lg text-yellow-900 mb-3">Conclusión del Análisis</h3>
+                        <p class="text-yellow-800">A pesar de que el escenario óptimo ofrece una tasa impositiva del 0%, la combinación de un riesgo fiscal catastrófico y una barrera procesal insuperable hacen que esta alternativa sea la más peligrosa y deba ser descartada.</p>
+                        <div class="mt-6 text-center"><span class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-red-700 bg-red-100">NO RECOMENDADA</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>Confidencial</span><span>Diapositiva 4 de 7</span></div>
+        </section>
+        
+        <!-- Slide 5: Alternativa 3 - Readquisición -->
+        <section class="slide bg-white">
+            <div class="slide-header"><span class="font-bold text-blue-900">Alternativa 3</span></div>
+            <div class="w-full max-w-6xl">
+                <h2 class="action-title">Readquisición de Acciones: La vía más eficiente para maximizar el valor y mejorar los indicadores financieros.</h2>
+                <p class="subtitle">Tratamiento fiscal como ganancia ocasional con una tasa del 15%.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="card bg-gray-50">
+                        <h3 class="font-bold text-lg text-gray-800 mb-3">Paso a Paso y Beneficios</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-700 mb-4">
+                            <li>Aprobación en Asamblea con mayoría calificada (70%).</li>
+                            <li>Financiación con utilidades líquidas (requisito cumplido).</li>
+                            <li>Creación de "Reserva para readquisición de acciones".</li>
+                            <li>Compra de acciones a los accionistas que deseen vender.</li>
+                        </ol>
+                         <div class="p-3 bg-blue-50 border border-blue-200 rounded-lg"><h4 class="font-semibold text-blue-800">Beneficio Estratégico</h4><p class="text-sm text-blue-700">Aumenta las Utilidades por Acción (UPA) y el Retorno sobre el Patrimonio (ROE), haciendo la compañía más atractiva.</p></div>
+                    </div>
+                    <div class="card">
+                        <h3 class="font-bold text-lg text-gray-800 mb-3">Cuantificación de Efectos</h3>
+                        <div class="space-y-4">
+                            <div><div class="flex justify-between text-sm font-medium text-gray-600"><span>Ingreso Bruto por Venta</span><span>$850.000.000</span></div><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-600 h-2.5 rounded-full" style="width: 100%"></div></div></div>
+                            <div><div class="flex justify-between text-sm font-medium text-red-600"><span>Impuesto Ganancia Ocasional (15%)</span><span>($52.500.000)</span></div><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-red-500 h-2.5 rounded-full" style="width: 6.18%"></div></div></div>
+                            <div><div class="flex justify-between text-sm font-bold text-green-700"><span>Valor Neto para Accionistas</span><span>$797.500.000</span></div><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-green-600 h-2.5 rounded-full" style="width: 93.82%"></div></div></div>
+                        </div>
+                        <div class="mt-6 p-3 bg-green-50 border border-green-200 rounded-lg text-center"><p class="font-bold text-green-800">Tasa Efectiva de Impuesto: 6.18%</p><p class="text-sm text-green-700">La alternativa fiscalmente más eficiente y estratégicamente superior.</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>Confidencial</span><span>Diapositiva 5 de 7</span></div>
+        </section>
+
+        <!-- Slide 6: Comparativo Cuantitativo -->
+        <section class="slide bg-gray-50">
+             <div class="slide-header"><span class="font-bold text-blue-900">Análisis Comparativo</span></div>
+            <div class="w-full max-w-6xl">
+                 <h2 class="action-title text-center">La Readquisición de Acciones entrega ~$200M más a los accionistas.</h2>
+                 <p class="subtitle text-center">Comparación del valor neto recibido por los accionistas bajo cada escenario.</p>
+                 <div class="bar-chart">
+                    <div class="bar"><div class="bar-fill bg-red-500 relative" style="height: 70.4%;"><div class="bar-top-value">$598M</div></div><div class="bar-label">Dividendos</div></div>
+                    <div class="bar"><div class="bar-fill bg-yellow-400 relative" style="height: 100%;"><div class="bar-top-value">$850M*</div></div><div class="bar-label">Reducción Capital</div></div>
+                    <div class="bar"><div class="bar-fill bg-green-500 relative" style="height: 93.8%;"><div class="bar-top-value">$797M</div></div><div class="bar-label">Readquisición Acciones</div></div>
+                    <div class="absolute -left-12 top-0 bottom-0 flex flex-col justify-between text-sm text-gray-500" style="height: calc(100% - 3rem);"><span>$850M</span><span>$0M</span></div>
+                 </div>
+                 <p class="text-center text-xs text-gray-500 mt-12">*Valor teórico antes de considerar el riesgo extremo de re-caracterización fiscal.</p>
+            </div>
+            <div class="slide-footer"><span>Confidencial</span><span>Diapositiva 6 de 7</span></div>
+        </section>
+
+        <!-- Slide 7: Recomendación Final -->
+        <section class="slide bg-blue-900 text-white">
+            <div class="text-center max-w-4xl">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Recomendación Final: Adoptar la Readquisición de Acciones</h2>
+                <p class="mt-6 text-xl text-blue-200">Es la estrategia que alinea de forma óptima los intereses de la sociedad y sus accionistas, demostrando una gestión financiera y fiscal sofisticada.</p>
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                    <div class="p-4"><h3 class="font-bold text-lg text-white">1. Maximiza Valor</h3><p class="mt-2 text-blue-300">Entrega el mayor valor neto a los accionistas (~$797.5M) con una carga fiscal mínima y predecible (6.18%).</p></div>
+                    <div class="p-4 border-l border-r border-blue-700"><h3 class="font-bold text-lg text-white">2. Mitiga Riesgos</h3><p class="mt-2 text-blue-300">Evita los peligrosos riesgos fiscales y procesales de la reducción de capital y la alta carga impositiva de los dividendos.</p></div>
+                    <div class="p-4"><h3 class="font-bold text-lg text-white">3. Genera Beneficios Estratégicos</h3><p class="mt-2 text-blue-300">Mejora los indicadores financieros clave (UPA/ROE) y envía una señal positiva de confianza en el futuro de la compañía.</p></div>
+                </div>
+                <div class="mt-12"><a href="#" class="bg-white text-blue-900 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-200 transition-colors">Próximos Pasos: Convocar a Asamblea</a></div>
+            </div>
+            <div class="slide-footer text-blue-300"><span>Confidencial</span><span>Diapositiva 7 de 7</span></div>
+        </section>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div id="navigation" class="fixed bottom-8 left-1/2 -translate-x-1/2 flex space-x-4 z-20">
+        <button id="prevBtn" class="bg-blue-800 text-white font-bold py-2 px-4 rounded-lg shadow-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors">Anterior</button>
+        <button id="nextBtn" class="bg-blue-800 text-white font-bold py-2 px-4 rounded-lg shadow-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors">Siguiente</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentSlide = 0;
+
+            function showSlide(n) {
+                // Hide the current slide
+                slides[currentSlide].classList.remove('active-slide');
+
+                // Update current slide index
+                currentSlide = n;
+
+                // Show the new slide
+                slides[currentSlide].classList.add('active-slide');
+
+                // Update button states
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === slides.length - 1;
+            }
+
+            // Event Listeners for buttons
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < slides.length - 1) {
+                    showSlide(currentSlide + 1);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    showSlide(currentSlide - 1);
+                }
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    nextBtn.click();
+                } else if (e.key === 'ArrowLeft') {
+                    prevBtn.click();
+                }
+            });
+
+            // Show the first slide initially
+            showSlide(0);
+        });
+    </script>
+
+</body>
+</html>
