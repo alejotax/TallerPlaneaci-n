@@ -69,7 +69,6 @@
             padding: 1.5rem;
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
             border: 1px solid #e5e7eb;
-            /* height: 100%; REMOVED to allow content-based height */
         }
         .kpi {
             text-align: center;
@@ -188,20 +187,20 @@
                 <span class="font-bold text-blue-900">Resumen Ejecutivo</span>
             </div>
             <div class="w-full max-w-6xl">
-                <h2 class="action-title">Existen dos alternativas fiscalmente óptimas para entregar el 100% del valor a los accionistas.</h2>
+                <h2 class="action-title">La Readquisición de Acciones es la única alternativa fiscalmente óptima y legalmente viable.</h2>
                 <p class="subtitle">Análisis comparativo de tres alternativas de distribución de $850M.</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="card border-t-4 border-orange-500">
-                        <h3 class="font-bold text-lg text-gray-800">2. Readquisición de Acciones</h3>
-                        <p class="text-sm text-gray-500 mt-1">Genera pérdida fiscal, resultando en cero impuesto.</p>
-                        <div class="mt-4 kpi"><p class="kpi-value text-orange-600">$850M</p><p class="kpi-label">Valor Neto para Accionistas</p></div>
-                        <div class="mt-2 kpi"><p class="text-2xl font-bold text-orange-600">0%</p><p class="kpi-label">Tasa Efectiva de Impuesto</p></div>
+                    <div class="card border-t-4 border-yellow-500">
+                        <h3 class="font-bold text-lg text-gray-800">1. Reembolso de la Prima</h3>
+                        <p class="text-sm text-gray-500 mt-1">Óptima en teoría, pero legalmente inviable.</p>
+                        <div class="mt-4 kpi"><p class="kpi-value text-yellow-600">$850M*</p><p class="kpi-label">Valor Neto (Teórico)</p></div>
+                        <div class="mt-2 kpi"><p class="text-2xl font-bold text-yellow-600">0%*</p><p class="kpi-label">Tasa Impuesto (Riesgo Legal)</p></div>
                     </div>
                     <div class="card border-t-4 border-green-500 transform scale-105">
                         <div class="absolute -top-3 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">RECOMENDADO</div>
-                        <h3 class="font-bold text-lg text-gray-800">1. Distribución de la Prima</h3>
-                        <p class="text-sm text-gray-500 mt-1">La vía más directa y simple, sin carga fiscal.</p>
+                        <h3 class="font-bold text-lg text-gray-800">2. Readquisición de Acciones</h3>
+                        <p class="text-sm text-gray-500 mt-1">Genera pérdida fiscal, resultando en cero impuesto.</p>
                         <div class="mt-4 kpi"><p class="kpi-value text-green-600">$850M</p><p class="kpi-label">Valor Neto para Accionistas</p></div>
                          <div class="mt-2 kpi"><p class="text-2xl font-bold text-green-600">0%</p><p class="kpi-label">Tasa Efectiva de Impuesto</p></div>
                     </div>
@@ -219,30 +218,37 @@
             </div>
         </section>
 
-        <!-- Slide 3: Alternativa 1 (Recomendada) - Distribución de Prima -->
+        <!-- Slide 3: Alternativa 1 - Reembolso de Prima -->
         <section class="slide bg-white">
-            <div class="slide-header"><span class="font-bold text-blue-900">Alternativa 1 (Recomendada)</span></div>
+            <div class="slide-header"><span class="font-bold text-blue-900">Alternativa 1</span></div>
             <div class="w-full max-w-6xl">
-                <h2 class="action-title">Distribución de la Prima: La vía más directa y eficiente para entregar $850M sin carga fiscal.</h2>
-                <p class="subtitle">El reembolso de la prima en colocación de acciones no constituye renta ni ganancia ocasional.</p>
+                <h2 class="action-title">Reembolso de la Prima en Colocación de Acciones: Inviable por incumplimiento legal.</h2>
+                <p class="subtitle">Aunque fiscalmente atractiva, la sociedad no cumple los requisitos del Código de Comercio.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="card bg-gray-50">
-                        <h3 class="font-bold text-lg text-gray-800 mb-3">Paso a Paso</h3>
+                        <h3 class="font-bold text-lg text-gray-800 mb-3">Requisitos Legales (Art. 145 C. Co.)</h3>
                         <ol class="list-decimal list-inside space-y-2 text-gray-700">
-                            <li>Verificar el soporte contable y fiscal de la prima como aporte de capital.</li>
-                            <li>Aprobación en Asamblea General del reembolso de la prima.</li>
-                            <li>Desembolso directo de $850M a los accionistas.</li>
-                            <li>No altera la participación porcentual de los accionistas.</li>
+                            <li>Autorización previa de la Superintendencia de Sociedades.</li>
+                            <li>Los activos de la sociedad deben representar al menos el doble de su pasivo externo **después** de la reducción.</li>
+                            <li>Si existen pasivos laborales, se requiere autorización previa del Ministerio del Trabajo.</li>
                         </ol>
                     </div>
-                    <div class="card">
-                        <h3 class="font-bold text-lg text-gray-800 mb-3">Cuantificación de Efectos</h3>
+                    <div class="card border-2 border-red-500 bg-red-50">
+                        <h3 class="font-bold text-lg text-red-800 mb-3">Análisis de Viabilidad</h3>
                         <div class="space-y-4">
-                            <div><div class="flex justify-between text-sm font-medium text-gray-600"><span>Reembolso Bruto</span><span>$850.000.000</span></div><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-600 h-2.5 rounded-full" style="width: 100%"></div></div></div>
-                            <div><div class="flex justify-between text-sm font-medium text-gray-600"><span>Impuesto para el Accionista</span><span>$0</span></div><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-gray-300 h-2.5 rounded-full" style="width: 0%"></div></div></div>
-                            <div><div class="flex justify-between text-sm font-bold text-green-700"><span>Valor Neto para Accionistas</span><span>$850.000.000</span></div><div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-green-600 h-2.5 rounded-full" style="width: 100%"></div></div></div>
+                           <div>
+                                <p class="text-sm font-medium text-gray-700">Activos después del reembolso:</p>
+                                <p class="text-lg font-bold text-gray-900">$9.450.000.000</p>
+                           </div>
+                           <div>
+                                <p class="text-sm font-medium text-gray-700">Doble del Pasivo Externo (Requisito):</p>
+                                <p class="text-lg font-bold text-gray-900">$13.900.000.000</p>
+                           </div>
+                           <div class="mt-4 p-3 bg-red-100 rounded-lg">
+                               <p class="font-bold text-red-900 text-center">Incumplimiento: Los activos ($9.45B) no superan el doble del pasivo ($13.9B).</p>
+                           </div>
+                           <p class="text-sm text-red-800 mt-2">Para proceder, se necesitaría la aprobación por escrito de <strong>todos</strong> los acreedores, lo cual representa un proceso complejo. Por lo tanto, esta opción debe ser descartada.</p>
                         </div>
-                        <div class="mt-6 p-3 bg-green-50 border border-green-200 rounded-lg text-center"><p class="font-bold text-green-800">Tasa Efectiva de Impuesto: 0%</p><p class="text-sm text-green-700">La alternativa fiscalmente perfecta y más directa.</p></div>
                     </div>
                 </div>
             </div>
@@ -251,7 +257,7 @@
 
         <!-- Slide 4: Alternativa 2 - Readquisición -->
         <section class="slide bg-gray-50">
-            <div class="slide-header"><span class="font-bold text-blue-900">Alternativa 2</span></div>
+            <div class="slide-header"><span class="font-bold text-blue-900">Alternativa 2 (Recomendada)</span></div>
             <div class="w-full max-w-6xl">
                 <h2 class="action-title">Readquisición de Acciones: Fiscalmente óptima al generar una pérdida ocasional.</h2>
                 <p class="subtitle">Al actualizar los aportes, el costo fiscal por acción supera el precio de venta, resultando en un impuesto de $0.</p>
@@ -334,15 +340,15 @@
         <section class="slide bg-gray-50">
              <div class="slide-header"><span class="font-bold text-blue-900">Análisis Comparativo</span></div>
             <div class="w-full max-w-6xl">
-                 <h2 class="action-title text-center">Existen dos vías para entregar el 100% del valor a los accionistas sin carga fiscal.</h2>
+                 <h2 class="action-title text-center">La Readquisición de Acciones es la única vía para entregar el 100% del valor sin carga fiscal.</h2>
                  <p class="subtitle text-center">Comparación del valor neto recibido por los accionistas bajo cada escenario.</p>
                  <div class="bar-chart">
                     <div class="bar"><div class="bar-fill bg-red-500 relative" style="height: 75.9%;"><div class="bar-top-value">$645M</div></div><div class="bar-label">Dividendos</div></div>
-                    <div class="bar"><div class="bar-fill bg-orange-500 relative" style="height: 100%;"><div class="bar-top-value">$850M</div></div><div class="bar-label">Readquisición Acciones</div></div>
-                    <div class="bar"><div class="bar-fill bg-green-500 relative" style="height: 100%;"><div class="bar-top-value">$850M</div></div><div class="bar-label">Distribución de Prima</div></div>
+                    <div class="bar"><div class="bar-fill bg-yellow-500 relative" style="height: 100%;"><div class="bar-top-value">$850M*</div></div><div class="bar-label">Reembolso de Prima</div></div>
+                    <div class="bar"><div class="bar-fill bg-green-500 relative" style="height: 100%;"><div class="bar-top-value">$850M</div></div><div class="bar-label">Readquisición Acciones</div></div>
                     <div class="absolute -left-12 top-0 bottom-0 flex flex-col justify-between text-sm text-gray-500" style="height: calc(100% - 3rem);"><span>$850M</span><span>$0M</span></div>
                  </div>
-                 <p class="text-center text-xs text-gray-500 mt-12">Los valores netos muestran el dinero final que recibe el accionista después de impuestos.</p>
+                 <p class="text-center text-xs text-gray-500 mt-12">*Valor teórico. La operación es legalmente inviable por incumplir el Art. 145 del C. Co.</p>
             </div>
             <div class="slide-footer"><span>Confidencial</span><span>Diapositiva 6 de 7</span></div>
         </section>
@@ -350,12 +356,12 @@
         <!-- Slide 7: Recomendación Final -->
         <section class="slide bg-blue-900 text-white">
             <div class="text-center max-w-4xl">
-                <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Recomendación Final: Adoptar la Distribución de la Prima</h2>
-                <p class="mt-6 text-xl text-blue-200">Es la estrategia más simple y directa para maximizar el valor. La Readquisición de Acciones es una alternativa igualmente eficiente pero más compleja.</p>
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Recomendación Final: Adoptar la Readquisición de Acciones</h2>
+                <p class="mt-6 text-xl text-blue-200">Es la única estrategia que combina la máxima eficiencia fiscal (0% impuesto) con la viabilidad legal y beneficios estratégicos para la compañía.</p>
                 <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                    <div class="p-4"><h3 class="font-bold text-lg text-white">1. Maximiza Valor</h3><p class="mt-2 text-blue-300">Ambas opciones (Prima y Readquisición) entregan el 100% del valor ($850M) con una carga fiscal de cero.</p></div>
-                    <div class="p-4 border-l border-r border-blue-700"><h3 class="font-bold text-lg text-white">2. Simplicidad y Certeza</h3><p class="mt-2 text-blue-300">La Distribución de Prima es el mecanismo más simple, con menor riesgo de interpretación y sin alterar la composición accionaria.</p></div>
-                    <div class="p-4"><h3 class="font-bold text-lg text-white">3. Beneficio Estratégico</h3><p class="mt-2 text-blue-300">La Readquisición ofrece el beneficio adicional de mejorar indicadores como UPA/ROE, lo que podría ser un objetivo secundario.</p></div>
+                    <div class="p-4"><h3 class="font-bold text-lg text-white">1. Maximiza Valor</h3><p class="mt-2 text-blue-300">Entrega el 100% del valor a los accionistas ($850M) al generar una pérdida fiscal que anula cualquier impuesto.</p></div>
+                    <div class="p-4 border-l border-r border-blue-700"><h3 class="font-bold text-lg text-white">2. Viabilidad Legal</h3><p class="mt-2 text-blue-300">A diferencia del reembolso de prima, este mecanismo no está sujeto a la restrictiva regla de solvencia del Art. 145 del C. Co.</p></div>
+                    <div class="p-4"><h3 class="font-bold text-lg text-white">3. Beneficio Estratégico</h3><p class="mt-2 text-blue-300">Mejora indicadores financieros clave como las Utilidades por Acción (UPA) y el Retorno sobre el Patrimonio (ROE).</p></div>
                 </div>
                 <div class="mt-12"><a href="#" class="bg-white text-blue-900 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-200 transition-colors">Próximos Pasos: Convocar a Asamblea</a></div>
             </div>
