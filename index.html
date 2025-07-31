@@ -69,7 +69,7 @@
             padding: 1.5rem;
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
             border: 1px solid #e5e7eb;
-            height: 100%;
+            /* height: 100%; REMOVED to allow content-based height */
         }
         .kpi {
             text-align: center;
@@ -277,7 +277,10 @@
                             </tbody>
                         </table>
                     </div>
-                     <div class="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg text-center">
+                    <p class="text-xs text-gray-500 mt-2 px-1">
+                        <b>Nota sobre el Costo Fiscal Actualizado:</b> El costo se determina actualizando los aportes históricos con los factores del Decreto 174 de 2025. Este valor se promedia por el número de acciones para obtener el costo fiscal promedio por acción, de acuerdo con el **artículo 76 del Estatuto Tributario.**
+                    </p>
+                     <div class="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg text-center">
                         <p class="font-bold text-green-800">Impuesto Total de la Operación: $0</p>
                         <p class="text-sm text-green-700">Dado que el costo fiscal actualizado por acción es mayor que el precio de venta para todos los accionistas, la operación genera una pérdida ocasional y no hay impuesto a pagar. El valor neto recibido es de **$850.000.000**.</p>
                     </div>
